@@ -1,4 +1,4 @@
-const myMap = L.map('mapArea').setView([34.0709, -118.444], 5);
+ const myMap = L.map('mapArea').setView([34.0709, -118.444], 5);
 
 const url = "https://spreadsheets.google.com/feeds/list/1upD99bKWIO68jL8MKWV67KE-_H_TVn2bCwqyQkqNsBw/oxw5dh3/public/values?alt=json"
 
@@ -28,16 +28,16 @@ let speakOtherLanguage = L.featureGroup();
 
 let exampleOptions = {
     radius: 4,
-    fillColor: "#ff7800",
-    color: "#000",
+    fillColor: "black",
+    color: "yellow",
     weight: 1,
     opacity: 1,
-    fillOpacity: 0.8
+    fillOpacity: 1
 }
 
 function addMarker(data){
     if(data.doyouspeakenglishfluently == "Yes"){
-        exampleOptions.fillColor = "green"
+        exampleOptions.fillColor = "black"
         speakFluentEnglish.addLayer(L.circleMarker([data.lat,data.lng],exampleOptions).bindPopup(`<h2>Speak English fluently</h2>`))
         createButtons(data.lat,data.lng,data.location)
         }
@@ -83,7 +83,7 @@ function formatData(theData){
 }
 
 let layers = {
-	"Speaks English": speakFluentEnglish,
+	"Speaks Simglish": speakFluentEnglish,
 	"Speaks Other Languages": speakOtherLanguage
 }
 
